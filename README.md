@@ -64,6 +64,25 @@ After an install, the installer prints the line to add. It never edits your inst
 
 Machine-specific rules (paths, preferred tools, budgets) stay in that machine's own file, which wins if the two conflict. Skills that need a local detail say so. For example, `pr-learning` reads its learning-record path and learning tool from your instructions.
 
+### Optional: pr-learning hooks (Claude Code)
+
+To make pr-learning's checkpoints hard to skip in a project, add this to that project's `.claude/settings.local.json` (personal and gitignored, so a public repo stays clean). Point `--record` at your learning record:
+
+```json
+{
+  "hooks": {
+    "PostToolUse": [{ "matcher": "Bash", "hooks": [{ "type": "command", "timeout": 10,
+      "command": "python3 ~/.claude/skills/pr-learning/scripts/pr_learning_hook.py branch --record ~/path/to/record.md" }] }],
+    "PreToolUse": [{ "matcher": "Bash", "hooks": [{ "type": "command", "timeout": 20,
+      "command": "python3 ~/.claude/skills/pr-learning/scripts/pr_learning_hook.py gate --record ~/path/to/record.md" }] }]
+  }
+}
+```
+
+- **After `git checkout -b`, `git switch -c`, or `git worktree add -b`:** Claude is told to run the start checkpoint.
+- **Before `gh pr create` or `gh pr merge`:** the command is blocked until the record has an end entry for that branch. Merging by PR number looks up the branch with `gh`; if that fails, you're asked instead.
+- **A bug in the hook never blocks work:** it lets the command through and shows an error.
+
 ## Commands
 
 | Command | What it does |

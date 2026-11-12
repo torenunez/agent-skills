@@ -47,13 +47,19 @@ When the work is done, before opening or merging the PR.
 
 Append one entry per PR:
 
+The `[<branch>]` tag is the PR's git branch; the optional hooks below match on it.
+
 ```markdown
-## <project> <PR or version> (<YYYY-MM-DD>)
+## <project> <PR or version> [<branch>] (<YYYY-MM-DD>)
 Start note: <contains> · <who writes what> · <done means>
 - Concept: <name>: <one line> [<link>]
 - Hand-written: <piece, or "none">
 - Quiz: <question in a few words>: right | right with a hint | missed
 - Skipped: <start | end>, if so
 ```
+
+## Hooks (optional)
+
+`scripts/pr_learning_hook.py` makes the two checkpoints hard to miss: after a branch is created it reminds you to run the start checkpoint, and it blocks opening or merging a PR until the record has an end entry (a quiz result or `Skipped: end`) for that branch. When it blocks, run the end checkpoint or, if the user says skip, record the skip; then retry. Setup is in the repo README.
 
 Project rules win where they conflict with this skill (for example a repo's vocabulary or privacy rules).
