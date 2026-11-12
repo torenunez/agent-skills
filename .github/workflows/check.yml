@@ -11,7 +11,7 @@ jobs:
   test-macos-system-python:
     runs-on: macos-latest  # the stock macOS python3 (3.9.x) is the real-world floor
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           persist-credentials: false
       - run: /usr/bin/python3 --version
@@ -21,10 +21,10 @@ jobs:
   test-current-python:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           persist-credentials: false
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
       - run: python agent_skills.py check
@@ -33,7 +33,7 @@ jobs:
   secrets:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0  # scan full history
           persist-credentials: false
