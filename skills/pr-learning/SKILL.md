@@ -34,7 +34,7 @@ Before any code changes for the PR (after the goal is known, before the plan is 
 When the work is done, before opening or merging the PR.
 
 1. **Recap.** What changed and why, then how it works end to end in a few numbered steps with `file:line` links. Compare against the start note and name anything that grew beyond it: the user needs to see scope creep.
-2. **Quiz.** 1–2 questions about the concepts (how or why, never trivia), one at a time. Wait for their answer. When it's wrong or they're stuck: a hint first, then the answer with a short explanation.
+2. **Quiz.** 1–2 questions about the concepts (how or why, never trivia), one at a time. Wait for their answer. When it's wrong or they're stuck: a hint first, then the answer with a short explanation. A hint says the idea in plain words, then points to the code ("when the lookup fails, `run` returns None instead of crashing ([line 55])"); never a bare code reference left for them to decode.
 3. **Go deeper.** The links again, plus at most one more (checked the same way).
 4. **Learning note.** If the user's instructions name a learning tool, a short plain-text block they can paste into it, one line per concept, written as a learning goal ("Understand X: why it matters here"). In chat only; never in a file. Otherwise skip this step.
 5. **Record it.** Append the entry (format below).
