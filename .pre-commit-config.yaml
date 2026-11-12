@@ -1,0 +1,13 @@
+# Optional local hooks: `pre-commit install` once per clone. CI runs the same checks.
+repos:
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.21.2
+    hooks:
+      - id: gitleaks
+  - repo: local
+    hooks:
+      - id: agent-skills-check
+        name: agent-skills check
+        entry: python3 agent_skills.py check
+        language: system
+        pass_filenames: false
