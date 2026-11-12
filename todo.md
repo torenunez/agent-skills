@@ -5,6 +5,10 @@
 - Add `UPSTREAM.md` provenance (pinned commit + license) if a third-party skill is ever vendored.
 - Write work-machine rollout notes after the first install there.
 
+## CI
+
+- Bump `actions/checkout@v4` / `actions/setup-python@v5` to their Node 24 releases (CI warns Node 20 is deprecated).
+
 ## Installer polish (from the v1 review)
 
 - Catch `configparser.Error` in `load_config` so a malformed `config.ini` exits 2 cleanly instead of a traceback.
