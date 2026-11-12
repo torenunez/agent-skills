@@ -12,7 +12,7 @@ Design and reasoning: [docs/design.md](docs/design.md).
 
 | Skill | Use it when |
 |---|---|
-| [pr-learning](skills/pr-learning/SKILL.md) | Starting and finishing a PR: learn the concepts behind the change, then get quizzed |
+| [pr-learning](skills/pr-learning/SKILL.md) | Starting and finishing a PR: learn the concepts behind the change, read the 1–3 key code sections, then get quizzed |
 | [docs-drift](skills/docs-drift/SKILL.md) | Before or after a PR that changes behavior: find and fix docs that no longer match the code |
 | [process-agent-feedback](skills/process-agent-feedback/SKILL.md) | Weighing review feedback from other agents or people |
 

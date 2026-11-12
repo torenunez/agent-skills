@@ -101,7 +101,7 @@ Walk me through fixing the root cause with a question: update plans, instruction
 
 ### Comments
 
-- Always comment code, especially non-obvious logic.
+- Code should be extremely readable: annotate generously, with many short comments rather than a few long ones. Someone should be able to skim just the comments, top to bottom, and follow what the code does.
 - Short inline comments, directly above a section or at the end of a line. One sentence at most; a few words is better (`# dedupe by user_id`).
 - No big comment blocks or multi-line comment paragraphs.
 - This applies to all code, including code copied from a plan.
