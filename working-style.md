@@ -102,9 +102,13 @@ Walk me through fixing the root cause with a question: update plans, instruction
 ### Comments
 
 - Code should be extremely readable: annotate generously, with many short comments rather than a few long ones. Someone should be able to skim just the comments, top to bottom, and follow what the code does.
+- Aim for about 1 short comment per 5 lines of code (imports and docstrings don't count). A guideline, not a quota.
+- Each comment is about its own line: why it's there, what a number means, what it assumes. Never restate the syntax.
+- A wrong or misplaced comment is worse than none.
 - Short inline comments, directly above a section or at the end of a line. One sentence at most; a few words is better (`# dedupe by user_id`).
 - No big comment blocks or multi-line comment paragraphs.
 - This applies to all code, including code copied from a plan.
+- After writing or changing code, run the `code-comments` skill if available: measure, attack each comment, and turn my feedback into examples.
 
 ### Testing (minimalist)
 

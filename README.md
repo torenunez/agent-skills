@@ -14,6 +14,7 @@ Design and reasoning: [docs/design.md](docs/design.md).
 |---|---|
 | [pr-learning](skills/pr-learning/SKILL.md) | Starting and finishing a PR: learn the concepts behind the change, read the 1–3 key code sections, then get quizzed |
 | [docs-drift](skills/docs-drift/SKILL.md) | Before or after a PR that changes behavior: find and fix docs that no longer match the code |
+| [code-comments](skills/code-comments/SKILL.md) | After writing code: measure comment density (about 1 per 5 lines), attack each comment for truth and relevance, and turn feedback into examples |
 | [process-agent-feedback](skills/process-agent-feedback/SKILL.md) | Weighing review feedback from other agents or people |
 
 ## Quick start
