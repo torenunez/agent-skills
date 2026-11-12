@@ -8,18 +8,25 @@ permissions:
   contents: read
 
 jobs:
-  test:
+  test-macos-system-python:
+    runs-on: macos-latest  # the stock macOS python3 (3.9.x) is the real-world floor
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - run: /usr/bin/python3 --version
+      - run: /usr/bin/python3 agent_skills.py check
+      - run: /usr/bin/python3 -m unittest -v
+
+  test-current-python:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python: ["3.9", "3.12"]  # oldest supported + current
     steps:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
       - uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python }}
+          python-version: "3.12"
       - run: python agent_skills.py check
       - run: python -m unittest -v
 

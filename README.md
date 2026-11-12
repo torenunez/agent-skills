@@ -101,7 +101,7 @@ python3 -m unittest -v
 python3 agent_skills.py check
 ```
 
-CI runs both on Python 3.9 and 3.12, plus a [gitleaks](https://github.com/gitleaks/gitleaks) secret scan. To run the same checks before every commit, install [pre-commit](https://pre-commit.com) and then run `pre-commit install`.
+CI runs both on macOS's built-in `python3` (3.9) and on Python 3.12, plus a [gitleaks](https://github.com/gitleaks/gitleaks) secret scan. To run the same checks before every commit, install [pre-commit](https://pre-commit.com) and then run `pre-commit install`.
 
 Ideas for later: [todo.md](todo.md).
 
